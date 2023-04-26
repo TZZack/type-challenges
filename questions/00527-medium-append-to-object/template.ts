@@ -1,1 +1,4 @@
-type AppendToObject<T, U, V> = any
+// 不能用联合类型&
+type AppendToObject<T, U extends string, V> = {
+  [K in keyof T | U]: K extends keyof T ? T[K] : V
+}
