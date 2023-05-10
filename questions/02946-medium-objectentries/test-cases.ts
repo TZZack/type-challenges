@@ -7,7 +7,7 @@ interface Model {
 }
 
 type ModelEntries = ['name', string] | ['age', number] | ['locations', string[] | null]
-
+// type test1 = Partial<Model> // Partial处理后有undefined，需要把undefined去掉
 type cases = [
   Expect<Equal<ObjectEntries<Model>, ModelEntries>>,
   Expect<Equal<ObjectEntries<Partial<Model>>, ModelEntries>>,
